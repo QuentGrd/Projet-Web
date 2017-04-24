@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Projet Web - Recherche</title>
+		<title>Projet Web - Établissement</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
@@ -13,12 +13,11 @@
 			<h2>Établissement</h2>
 			<article>
 				<h3>Fiche</h3>
-				<?php if (isset($_GET['uai'])){
+				<?php if (isset($_GET['uai']))
 					detail_etablissement($_GET['uai']);
-				}
-				else{
+				else
 					echo '<p>Etablissement non trouvé</p>';
-				}?>
+				?>
 			</article>
 		</section>
 

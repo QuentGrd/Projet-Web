@@ -30,7 +30,7 @@
 					search($_POST['entre'], $_POST['option']);
 					}
 					else{
-						affiche();
+						echo "<p>Veuillez renseigné tous les champs de recherche</p>\n";
 						}?>
 			</article>
 		</section>

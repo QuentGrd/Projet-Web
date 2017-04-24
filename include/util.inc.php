@@ -3,7 +3,7 @@
     $flag=false;
     $i=decrypt_sel($sel);
     while(($data=fgetcsv($file, 10000,';'))!= FALSE){
-        if ((strcmp($value,$data[$i])==0)){
+        if (((($i == 3) || ($i == 9)) && (stripos($data[$i], $value)!==FALSE)) || ((strcmp($value,$data[$i])==0))){
             echo '<p>Établissement : <a href="etablissement.php?uai='.$data[0].'">'.$data[3].'</a></p>';
             $flag=true;
         }
