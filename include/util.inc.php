@@ -1,10 +1,10 @@
-<?php function uai_search($uai){
+<?php function search($value, $sel){
     $file=fopen("res/etablissements_denseignement_superieur.csv", "r");
     $flag=false;
-    $i=0;
+    $i=decrypt_sel($sel);
     while(($data=fgetcsv($file, 10000,';'))!= FALSE){
-        if ((strcmp($uai,$data[0])==0)){
-            echo "<p>Établissement : ".$data[3]."</p>";
+        if ((strcmp($value,$data[$i])==0)){
+            echo '<p>Établissement : <a href="etablissement.php?uai='.$data[0].'">'.$data[3].'</a></p>';
             $flag=true;
         }
     }
@@ -13,6 +13,29 @@
     }
     fclose($file);
 } 
+
+function decrypt_sel($sel){
+    $i = 0;
+    switch($sel){
+        case 'uai':
+            $i = 0;
+            break;
+        case 'name':
+            $i = 3;
+            break;
+        case 'adress':
+            $i=9;
+            break;
+        case 'tel':
+            $i = 14;
+            break;
+        default:
+            $i = 0;
+            break;
+    }
+
+    return $i;
+}
 
 function affiche(){
     if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {

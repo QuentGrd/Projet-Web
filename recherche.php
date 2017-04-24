@@ -8,18 +8,7 @@
 	</head>
 
 	<body>
-		<header>
-			<h1>Projet Web</h1>
-			<nav>
-				<ul>
-					<li><a href="index.php">Accueil</a></li>
-					<li><a href="recherche.php">Recherche</a></li>
-					<li><a href="trie.php">Trie</a></li>
-					<li><a href="#">A Propos</a></li>
-				</ul>
-			</nav>
-		</header>
-
+	<?php include('include/header.inc.php'); ?>
 		<aside>
 			<form method="post" action="recherche.php">
 				<p><input type="text" name="entre"></p>
@@ -37,11 +26,11 @@
 			<h2>Recherche</h2>
 			<article>
 				<h3>Resultat</h3>
-				<?php if (isset($_POST['entre'])){
-					uai_search($_POST['entre']);
+				<?php if (isset($_POST['entre']) && isset($_POST['option'])){
+					search($_POST['entre'], $_POST['option']);
 					}
 					else{
-						//affiche();
+						affiche();
 						}?>
 			</article>
 		</section>
