@@ -37,6 +37,23 @@ function decrypt_sel($sel){
     return $i;
 }
 
+function detail_etablissement($uai){
+    $file=fopen("res/etablissements_denseignement_superieur.csv", "r");
+    $flag=false;
+    while(($data=fgetcsv($file, 10000,';'))!= FALSE){
+        if ((strcmp($uai,$data[0])==0)){
+            echo "<p>Établissement : ".$data[3]."</p>\n";
+            echo "<p>Adresse : ".$data[9].", ".$data[10]." ".$data[11]."</p>\n";
+            echo "<p>Téléphone : ".$data[14]."</p>";
+            $flag=true;
+        }
+    }
+    if ($flag==false){
+        echo"<p>Établissement non trouvé</p>";
+    }
+    fclose($file);
+}
+
 function affiche(){
     if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {

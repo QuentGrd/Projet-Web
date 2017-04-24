@@ -14,7 +14,7 @@
 			<article>
 				<h3>Fiche</h3>
 				<?php if (isset($_GET['uai'])){
-
+					detail_etablissement($_GET['uai']);
 				}
 				else{
 					echo '<p>Etablissement non trouvé</p>';
