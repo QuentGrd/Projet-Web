@@ -1,3 +1,4 @@
+<?php include("./include/util.inc.php") ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,22 +8,24 @@
 	</head>
 
 	<body>
-		<header>
-			<h1>Projet Web</h1>
-			<nav>
-				<ul>
-					<li><a href="index.php">Accueil</a></li>
-					<li><a href="recherche.php">Recherche</a></li>
-					<li><a href="trie.php">Trie</a></li>
-					<li><a href="#">A Propos</a></li>
-				</ul>
-			</nav>
-		</header>
+		<?php 
+			include("./include/header.inc.php");
+		?>
 
 		<aside>
 			<form>
 				<ul>
-					<li><input type="button" name="region" value="Région"></li>
+					<li>
+						<p>
+						<input type="button" name="region" value="Région">
+						<select name="option" id="option">
+							<option value="uai">Centre</option>
+							<option value="name">Ile de France</option>
+							<option value="adress">Auvergne</option>
+							<option value="tel">Corse</option>
+						</select>
+						</p>
+					</li>
 					<li><input type="button" name="academie" value="Académie"></li>
 					<li><input type="button" name="ville" value="Ville"></li>
 					<li><input type="button" name="type" value="Type"></li>
@@ -42,20 +45,9 @@
 						<th>Type</th>
 						<th>Nom</th>
 					</tr>
-					<tr>
-						<td>Ile-de-France</td>
-						<td>Versailles</td>
-						<td>Cergy-Pontoise</td>
-						<td>Université</td>
-						<td><a href="#">Université de Cergy-Pontoise</a></td>
-					</tr>
-					<tr>
-						<td>...</td>
-						<td>...</td>
-						<td>...</td>
-						<td>...</td>
-						<td><a href="#">...</a></td>
-					</tr>
+					<?php
+						fullTableau();
+					?>
 				</table>
 			</article>
 		</section>
