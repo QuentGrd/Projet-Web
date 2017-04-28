@@ -13,23 +13,39 @@
 		?>
 
 		<aside>
-			<form>
-				<ul>
-					<li>
-						<p>
-						<input type="button" name="region" value="Région">
-						<select name="option" id="option">
-							<option value="uai">Centre</option>
-							<option value="name">Ile de France</option>
-							<option value="adress">Auvergne</option>
-							<option value="tel">Corse</option>
-						</select>
-						</p>
-					</li>
-					<li><input type="button" name="academie" value="Académie"></li>
-					<li><input type="button" name="ville" value="Ville"></li>
-					<li><input type="button" name="type" value="Type"></li>
-				</ul>
+			<form method="post" action="trie.php">
+				<p>
+					<select name="optionRegion" id="optionRegion">
+						<?php
+							listeRegion();
+						?>
+					</select>
+					<input type="submit" name="region" value="Région">
+				</p>
+				<p>
+					<select name="optionAcademie" id="optionAcademie">
+						<?php
+							listeAcademie();
+						?>
+					</select>
+					<input type="button" name="academie" value="Académie">
+				</p>
+				<p>
+					<select name="optionVille" id="optionVille">
+						<?php
+							listeVille();
+						?>
+					</select>
+					<input type="submit" name="ville" value="Ville">
+				</p>
+				<p>
+					<select name="optionType" id="optionType">
+						<?php
+							listeType();
+						?>
+					</select>
+					<input type="button" name="type" value="Type">
+				</p>
 			</form>
 		</aside>
 
@@ -46,7 +62,18 @@
 						<th>Nom</th>
 					</tr>
 					<?php
-						fullTableau();
+						if(isset($_POST['region']) && isset($_POST['optionRegion']) && (strcmp($_POST['optionRegion'], "Toutes les régions")==0)){
+							echo "COUCOU 1";
+							fullTableau();
+						}
+						elseif(isset($_POST['regionRegion']) && isset($_POST['optionRegion'])){
+							echo "COUCOU 2 ";
+							tableauRegion($_POST['optionRegion']);
+						}
+						else{
+							echo "COUCOU 3";
+							fullTableau();
+						}
 					?>
 				</table>
 			</article>

@@ -83,4 +83,113 @@ function fullTableau(){
     }
 }
 
+function tableauRegion($region){
+    $array = array("Auvergne-Rhône-Alpes", "Bourgogne-Franche-Comté", "Bretagne", "Centre-Val de Loire", "Corse", "Grand Est", "Guadeloupe", "Guyane", "Hauts-de-France", "Île-de-France", "La Réunion", "Martinique", "Normandie", "Nouvelle Aquitaine", "Occitanie", "Pays de la Loire", "Provence-Alpes-Côte d'Azur");
+
+    if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
+        while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
+
+            if(strcmp($region,$data[18])==0){
+                echo "<tr>";
+                echo "<td>".$data[18]."</td>";
+                echo "<td>".$data[17]."</td>";
+                echo "<td>".$data[11]."</td>";
+                echo "<td>".$data[2]."</td>";
+                echo '<td><a href="#">'.$data[3].'</a></t>';
+                echo "</tr>\n";
+            }
+        }
+        fclose($handle);
+    }
+}
+
+function listeVille(){
+
+    $array = array();
+
+    if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
+        while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
+            if(in_array($data[11], $array) == false){
+                array_push($array, $data[11]);
+            }
+        }
+        fclose($handle);
+    }
+
+    array_multisort($array);
+
+    echo '<option value=Toutes les villes>Toutes les villes</option>\n';
+    for ($i=0; $i < sizeof($array); $i++) { 
+        if($i != 0){
+            echo '<option value='.$array[$i].'>'.$array[$i].'</option>\n';
+        }
+    }
+}
+
+function listeAcademie(){
+    $array = array();
+
+    if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
+        while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
+            if(in_array($data[17], $array) == false){
+                array_push($array, $data[17]);
+            }
+        }
+        fclose($handle);
+    }
+
+    array_multisort($array);
+
+    echo '<option value=Toutes les académies>Toutes les académies</option>\n';
+    for ($i=0; $i < sizeof($array); $i++) { 
+        if($i != 0){
+            echo '<option value='.$array[$i].'>'.$array[$i].'</option>\n';
+        }
+    }
+}
+
+function listeType(){
+    $array = array();
+
+    if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
+        while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
+            if(in_array($data[2], $array) == false){
+                array_push($array, $data[2]);
+            }
+        }
+        fclose($handle);
+    }
+
+    array_multisort($array);
+
+    echo '<option value=Tout les types>Tout les types</option>\n';
+    for ($i=0; $i < sizeof($array); $i++) { 
+        if($i != 0){
+            echo '<option value='.$array[$i].'>'.$array[$i].'</option>\n';
+        }
+    }
+}
+
+function listeRegion(){
+    $array = array();
+
+    if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
+        while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
+            if(in_array($data[18], $array) == false){
+                array_push($array, $data[18]);
+            }
+        }
+        fclose($handle);
+    }
+
+    array_multisort($array);
+
+    echo '<option value=Toutes les régions>Toutes les régions</option>\n';
+    for ($i=0; $i < sizeof($array); $i++) { 
+        if($i != 0){
+            echo '<option value='.$array[$i].'>'.$array[$i].'</option>\n';
+        }
+    }
+}
+
 ?>
