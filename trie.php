@@ -8,43 +8,23 @@
 	</head>
 
 	<body>
-		<?php 
-			include("./include/header.inc.php");
-		?>
-
+		<?php include("./include/header.inc.php"); ?>
 		<aside>
 			<form method="post" action="trie.php">
 				<p>
 					<select name="optionRegion" id="optionRegion">
-						<?php
-							listeRegion();
-						?>
+						<?php option_liste(18); ?>
 					</select>
-					<input type="submit" name="region" value="Région">
-				</p>
-				<p>
 					<select name="optionAcademie" id="optionAcademie">
-						<?php
-							listeAcademie();
-						?>
+						<?php option_liste(17); ?>
 					</select>
-					<input type="button" name="academie" value="Académie">
-				</p>
-				<p>
 					<select name="optionVille" id="optionVille">
-						<?php
-							listeVille();
-						?>
+						<?php option_liste(11); ?>
 					</select>
-					<input type="submit" name="ville" value="Ville">
-				</p>
-				<p>
 					<select name="optionType" id="optionType">
-						<?php
-							listeType();
-						?>
+						<?php option_liste(2); ?>
 					</select>
-					<input type="button" name="type" value="Type">
+					<input type="submit" name="ok" value="Trier">
 				</p>
 			</form>
 		</aside>
@@ -62,25 +42,16 @@
 						<th>Nom</th>
 					</tr>
 					<?php
-						if(isset($_POST['region']) && isset($_POST['optionRegion']) && (strcmp($_POST['optionRegion'], "Toutes les régions")==0)){
-							echo "COUCOU 1";
-							fullTableau();
-						}
-						elseif(isset($_POST['regionRegion']) && isset($_POST['optionRegion'])){
-							echo "COUCOU 2 ";
-							tableauRegion($_POST['optionRegion']);
-						}
+						if(isset($_POST['ok']))
+							tableau_etablissement($_POST['optionRegion'], $_POST['optionAcademie'], $_POST['optionVille'], $_POST['optionType']);
 						else{
-							echo "COUCOU 3";
+							//echo "COUCOU 3";
 							fullTableau();
 						}
 					?>
 				</table>
 			</article>
 		</section>
-
-		<footer>
-			<p>Projet réalisé par Matthieu Vilain & Quentin Gerard</p>
-		</footer>
+		<?php include('include/footer.inc.php'); ?>
 	</body>
 </html>

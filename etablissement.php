@@ -4,7 +4,7 @@
 	<head>
 		<title>Projet Web - Établissement</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/new_style.css">
 	</head>
 
 	<body>

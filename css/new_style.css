@@ -1,0 +1,53 @@
+@font-face{
+	font-family: 'h1_font';
+	src: url('../police/Sansation_Regular.ttf') format('truetype');
+}
+
+body{
+	background-color: #E9F2F9;
+}
+
+header{
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #9CC4E4;
+}
+
+h1{
+	font-family: 'h1_font', Trebuchet MS, Arial, Serif;
+	color: #1B325F;
+	font-size: 40px;
+	text-align: center;
+}
+
+nav{
+	background: #3A89C9;
+}
+
+nav ul{
+	margin: 0px;
+	text-align: center;
+}
+
+nav li{
+	/*display: block;*/
+	list-style: none;
+	display: inline-block;
+	font-size: 20px;
+	font-family: Trebuchet MS;
+	padding: 15px 30px;
+}
+
+nav li a{
+	color: #E9F2F9;
+	text-decoration: none;
+	transition: all 0.225s linear;
+}
+
+nav li a:hover{
+	background: #E9F2F9;
+	color: #3A89C9;
+	transition: all 0.225s linear;
+}

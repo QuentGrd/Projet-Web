@@ -60,20 +60,6 @@ function detail_etablissement($uai, $tel, $sel = 0){
     fclose($file);
 }
 
-function affiche(){
-    if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
-        while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
-            $num = count($data);
-            echo "<p> $num champs à la ligne $row: <br /></p>\n";
-            $row++;
-            for ($c=0; $c < $num; $c++) {
-                echo $data[$c] . "<br />\n";
-            }
-        }
-        fclose($handle);
-    }
-}
-
 function fullTableau(){
     if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
         while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
@@ -82,41 +68,20 @@ function fullTableau(){
             echo "<td>".$data[17]."</td>";
             echo "<td>".$data[11]."</td>";
             echo "<td>".$data[2]."</td>";
-            echo '<td><a href="#">'.$data[3].'</a></t>';
+            echo '<td><a href="etablissement.php?uai='.$data[0].'&tel='.$data[14].'">'.$data[3].'</a></t>';
             echo "</tr>";
         }
         fclose($handle);
     }
 }
 
-function tableauRegion($region){
-    $array = array("Auvergne-Rhône-Alpes", "Bourgogne-Franche-Comté", "Bretagne", "Centre-Val de Loire", "Corse", "Grand Est", "Guadeloupe", "Guyane", "Hauts-de-France", "Île-de-France", "La Réunion", "Martinique", "Normandie", "Nouvelle Aquitaine", "Occitanie", "Pays de la Loire", "Provence-Alpes-Côte d'Azur");
-
-    if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
-        while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
-
-            if(strcmp($region,$data[18])==0){
-                echo "<tr>";
-                echo "<td>".$data[18]."</td>";
-                echo "<td>".$data[17]."</td>";
-                echo "<td>".$data[11]."</td>";
-                echo "<td>".$data[2]."</td>";
-                echo '<td><a href="#">'.$data[3].'</a></t>';
-                echo "</tr>\n";
-            }
-        }
-        fclose($handle);
-    }
-}
-
-function listeVille(){
-
+function option_liste($ind){
     $array = array();
 
     if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
         while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
-            if(in_array($data[11], $array) == false){
-                array_push($array, $data[11]);
+            if(in_array($data[$ind], $array) == false){
+                array_push($array, $data[$ind]);
             }
         }
         fclose($handle);
@@ -124,78 +89,59 @@ function listeVille(){
 
     array_multisort($array);
 
-    echo '<option value=Toutes les villes>Toutes les villes</option>\n';
+    switch($ind){
+        case 2:
+            echo '<option value="Tous les types">Tous les types</option>\n';
+            break;
+        case 11:
+            echo '<option value="Toutes les villes">Tous les villes</option>\n';
+            break;
+        case 17:
+            echo '<option value="Toutes les académies">Tous les académies</option>\n';
+            break;
+        case 18:
+            echo '<option value="Toutes les régions">Tous les régions</option>\n';
+            break;
+        default:
+            break;
+    }
+
     for ($i=0; $i < sizeof($array); $i++) { 
         if($i != 0){
-            echo '<option value='.$array[$i].'>'.$array[$i].'</option>\n';
+            echo '<option value="'.$array[$i].'">'.$array[$i].'</option>\n';
         }
     }
 }
 
-function listeAcademie(){
-    $array = array();
-
-    if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
-        while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
-            if(in_array($data[17], $array) == false){
-                array_push($array, $data[17]);
+function tableau_etablissement($region, $acad, $ville, $type){
+    $ind = array(
+        2 => $type,
+        11 => $ville,
+        17 => $acad,
+        18 => $region
+    );
+    foreach ($ind as $i => $param) {
+        if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
+            while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
+                if(strcmp($param,$data[$i])==0){
+                    echo "<tr>";
+                    echo "<td>".$data[18]."</td>";
+                    echo "<td>".$data[17]."</td>";
+                    echo "<td>".$data[11]."</td>";
+                    echo "<td>".$data[2]."</td>";
+                    echo '<td><a href="etablissement.php?uai='.$data[0].'&tel='.$data[14].'">'.$data[3].'</a></t>';
+                    echo "</tr>\n";
+                }
+                /*else{
+                    echo "<tr>";
+                    echo "<td>".$param."/".$i."</td>";
+                    echo "</tr>\n";
+                }*/
             }
-        }
-        fclose($handle);
-    }
-
-    array_multisort($array);
-
-    echo '<option value=Toutes les académies>Toutes les académies</option>\n';
-    for ($i=0; $i < sizeof($array); $i++) { 
-        if($i != 0){
-            echo '<option value='.$array[$i].'>'.$array[$i].'</option>\n';
+            fclose($handle);
         }
     }
-}
-
-function listeType(){
-    $array = array();
-
-    if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
-        while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
-            if(in_array($data[2], $array) == false){
-                array_push($array, $data[2]);
-            }
-        }
-        fclose($handle);
-    }
-
-    array_multisort($array);
-
-    echo '<option value=Tout les types>Tout les types</option>\n';
-    for ($i=0; $i < sizeof($array); $i++) { 
-        if($i != 0){
-            echo '<option value='.$array[$i].'>'.$array[$i].'</option>\n';
-        }
-    }
-}
-
-function listeRegion(){
-    $array = array();
-
-    if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
-        while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
-            if(in_array($data[18], $array) == false){
-                array_push($array, $data[18]);
-            }
-        }
-        fclose($handle);
-    }
-
-    array_multisort($array);
-
-    echo '<option value=Toutes les régions>Toutes les régions</option>\n';
-    for ($i=0; $i < sizeof($array); $i++) { 
-        if($i != 0){
-            echo '<option value='.$array[$i].'>'.$array[$i].'</option>\n';
-        }
-    }
+    unset($i);
 }
 
 ?>
