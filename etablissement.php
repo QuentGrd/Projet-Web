@@ -10,19 +10,16 @@
 	<body>
 	<?php include('include/header.inc.php'); ?>
 		<section>
-			<h2>Établissement</h2>
+			<h2><?php detail_etablissement($_GET['uai'], $_GET['tel'], 1)?></h2>
 			<article>
 				<h3>Fiche</h3>
-				<?php if (isset($_GET['uai']))
-					detail_etablissement($_GET['uai']);
+				<?php if (isset($_GET['uai']) && isset($_GET['tel']))
+					detail_etablissement($_GET['uai'], $_GET['tel']);
 				else
 					echo '<p>Etablissement non trouvé</p>';
 				?>
 			</article>
 		</section>
-
-		<footer>
-			<p>Projet réalisé par Matthieu Vilain & Quentin Gerard</p>
-		</footer>
+		<?php include('include/footer.inc.php'); ?>
 	</body>
 </html>

@@ -34,9 +34,6 @@
 						}?>
 			</article>
 		</section>
-
-		<footer>
-			<p>Projet réalisé par Matthieu Vilain & Quentin Gerard</p>
-		</footer>
+		<?php include('include/footer.inc.php'); ?>
 	</body>
 </html>
