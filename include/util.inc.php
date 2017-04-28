@@ -4,7 +4,7 @@
     $i=decrypt_sel($sel);
     while(($data=fgetcsv($file, 10000,';'))!= FALSE){
         if (((($i == 3) || ($i == 9)) && (stripos($data[$i], $value)!==FALSE)) || ((strcmp($value,$data[$i])==0))){
-            echo '<p>Établissement : <a href="etablissement.php?uai='.$data[0].'">'.$data[3].'</a></p>';
+            echo '<p>Établissement : <a href="etablissement.php?uai='.$data[0].'&tel='.$data[14].'">'.$data[3].'</a></p>';
             $flag=true;
         }
     }
@@ -37,15 +37,21 @@ function decrypt_sel($sel){
     return $i;
 }
 
-function detail_etablissement($uai){
+function detail_etablissement($uai, $tel, $sel = 0){
     $file=fopen("res/etablissements_denseignement_superieur.csv", "r");
     $flag=false;
     while(($data=fgetcsv($file, 10000,';'))!= FALSE){
-        if ((strcmp($uai,$data[0])==0)){
-            echo "<p>Établissement : ".$data[3]."</p>\n";
-            echo "<p>Adresse : ".$data[9].", ".$data[10]." ".$data[11]."</p>\n";
-            echo "<p>Téléphone : ".$data[14]."</p>";
-            $flag=true;
+        if ((strcmp($uai,$data[0])==0) && (strcmp($tel,$data[14])==0)){
+            if ($sel == 1){
+                echo $data[3];
+                $flag = true;
+            }
+            else if($sel == 0){
+                echo "<p>Établissement : ".$data[3]."</p>\n";
+                echo "<p>Adresse : ".$data[9].", ".$data[10]." ".$data[11]."</p>\n";
+                echo "<p>Téléphone : ".$data[14]."</p>";
+                $flag=true;
+            }
         }
     }
     if ($flag==false){
