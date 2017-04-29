@@ -47,10 +47,19 @@ function detail_etablissement($uai, $tel, $sel = 0){
                 $flag = true;
             }
             else if($sel == 0){
-                echo "<p>Établissement : ".$data[3]."</p>\n";
-                echo "<p>Adresse : ".$data[9].", ".$data[10]." ".$data[11]."</p>\n";
-                for ($i=0; $i<50; $i++)
-                    echo "<p>Téléphone : ".$data[14]."</p>";
+                echo "<p>Établissement: ".$data[3]."</p>\n";
+                echo "<p>Type: ".$data[2]."</p>";
+                if ($data[1] != "")
+                    echo "<p>SIRET: ".$data[1]."</p>";
+                if ($data[4] != "")
+                    echo "<p>Sigle: ".$data[4]."</p>";
+                echo "<p>Statut: ".$data[5]."</p>";
+                if ($data[6] != "")
+                    echo "<p>Tutelle: ".$data[6]."</p>";
+                echo "<p>Adresse: ".$data[9].", ".$data[10]." ".$data[11]."</p>\n";
+                echo "<p>Région: ".$data[18]."</p>";
+                echo "<p>Téléphone: ".$data[14]."</p>";
+                echo "<p>Onisep: <a href=".$data[25].">".$data[25]."</a></p>";
                 $flag=true;
             }
         }

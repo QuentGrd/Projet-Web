@@ -117,6 +117,15 @@ header.scrolled nav li a:hover{
 	transition: all 0.3s linear;
 }
 
+header.scrolled h2{
+	text-align: center;
+	float: left;
+	font-size: 20px;
+	width: 500px;
+	margin: auto;
+	padding: 18.5px 0px;
+}
+
 @media all and (max-width: 660px) {
 }
 
