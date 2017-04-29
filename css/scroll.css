@@ -19,45 +19,48 @@ header{
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	background: #9CC4E4;
+	background: #3A89C9;
 	min-width: 510px;
 }
 
-h1{
+header h1{
 	font-family: Avenir, 'h1_font', Trebuchet MS, Arial, Serif;
-	color: #1B325F;
-	font-size: 40px;
-	text-align: center;
+	color: #E9F2F9;
+	float: left;
+	font-size: 25px;
+	margin: 0px;
+	padding: 15px 30px;
 }
 
-nav{
-	background: #3A89C9;
+header nav{
+	float: right;
+	vertical-align: middle;
 }
 
-nav ul{
+header nav ul{
 	margin: 0px;
 	text-align: center;
 	padding: 0px;
 }
 
-nav li{
+header nav li{
 	display: block;
 	list-style: none;
 	display: inline-block;
-	font-size: 20px;
+	font-size: 18px;
 	font-family: Trebuchet MS;
-	padding: 15px 0px;
+	padding: 21.5px 0px;
 }
 
-nav li a{
+header nav li a{
 	color: #E9F2F9;
 	text-decoration: none;
-	padding: 15px 30px;
+	padding: 21.5px 25px;
 	margin: 0px;
 	transition: all 0.225s linear;
 }
 
-nav li a:hover{
+header nav li a:hover{
 	background: #E9F2F9;
 	color: #3A89C9;
 	transition: all 0.225s linear;

@@ -4,7 +4,8 @@
 	<head>
 		<title>Projet Web - Établissement</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="css/new_style.css">
+		<link rel="stylesheet" href="css/new_style2.css">
+		<?php include('include/script.inc.php'); ?>
 	</head>
 
 	<body>

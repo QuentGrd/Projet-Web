@@ -49,7 +49,8 @@ function detail_etablissement($uai, $tel, $sel = 0){
             else if($sel == 0){
                 echo "<p>Établissement : ".$data[3]."</p>\n";
                 echo "<p>Adresse : ".$data[9].", ".$data[10]." ".$data[11]."</p>\n";
-                echo "<p>Téléphone : ".$data[14]."</p>";
+                for ($i=0; $i<50; $i++)
+                    echo "<p>Téléphone : ".$data[14]."</p>";
                 $flag=true;
             }
         }
