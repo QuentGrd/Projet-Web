@@ -1,16 +1,6 @@
-<script src="js/classie.js"></script>
-<script>
-	function init() {
-		window.addEventListener('scroll', function(e){
-			var scrolledDistance = window.pageYOffset || document.documentElement.scrollTop;
-			var limit = 50;
-			var header = document.querySelector("header");
-			if (scrolledDistance > limit)
-				classie.addClass(header,"scrolled");
-			else
-				if (classie.hasClass(header,"scrolled"))
-					classie.removeClass(header,"scrolled");
-		});
-	}
-	window.onload = init();
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).on("scroll",function(){
+    $("header").toggleClass("scrolled", $(document).scrollTop()>100);
+});
 </script>
