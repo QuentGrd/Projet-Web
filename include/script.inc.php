@@ -1,14 +1,14 @@
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).on("scroll",function(){
-	$("header").toggleClass("scrolled", $(document).scrollTop()>50);
+	$("header").toggleClass("scrolled", $(document).scrollTop()>40);
+	$("aside").toggleClass("scrolled", $(document).scrollTop()>40);
 });
 </script>
 <script type="text/javascript">
 $(document).on("scroll",function(){
-	if ($(document).scrollTop()>50)
+	if ($(document).scrollTop()>40)
 		$('h2').insertBefore($('nav'));
 	else
 		$('h2').insertBefore($('article'));

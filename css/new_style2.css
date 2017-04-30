@@ -5,8 +5,8 @@
 
 body{
 	background-color: #E9F2F9;
-	width: 1000px;
-	margin: auto;
+	/*width: 1000px;
+	margin: auto;*/
 }
 
 /*********************************
@@ -130,13 +130,39 @@ header.scrolled h2{
 }
 
 /*********************************
+********** Aside part **********
+**********************************/
+
+aside{
+	position: fixed;
+	width: 100%;
+	background-color: #1B325F;
+	top: 161px;
+	left: 0px;
+}
+
+aside.scrolled{
+	position: fixed;
+	width: 100%;
+	background-color: #1B325F;
+	top: 63px;
+	left: 0px;
+}
+
+aside form{
+	margin: 12px;
+	text-align: center;
+}
+
+/*********************************
 ********** Section part **********
 **********************************/
 
 section{
 	/*position: relative;*/
 	display: block;
-	margin-top: 200px;
+	margin: auto;
+	margin-top: 220px;
 	width: 1000px;
 	text-align: center;
 }
@@ -145,4 +171,15 @@ h2{
 	font-family: Avenir;
 	font-size: 25px;
 	color: #F26C4F;
+}
+
+/*********************************
+********** Footer part **********
+**********************************/
+
+footer{
+	width: 100%;
+	margin: 50px 0px 0px 0px;
+	background-color: #9CC4E4;
+	text-align: center;
 }

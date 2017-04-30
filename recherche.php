@@ -4,21 +4,22 @@
 	<head>
 		<title>Projet Web - Recherche</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/new_style2.css">
+		<?php include('include/script.inc.php'); ?>
 	</head>
 
 	<body>
 	<?php include('include/header.inc.php'); ?>
 		<aside>
 			<form method="post" action="recherche.php">
-				<p><input type="text" name="entre"></p>
-				<p><select name="option" id="option">
+				<input type="text" name="entre">
+				<select name="option" id="option">
 					<option value="uai">UAI</option>
 					<option value="name">Nom</option>
 					<option value="adress">Adresse</option>
 					<option value="tel">Tel.</option>
-				</select></p>
-				<p><input type="submit" name="valid" value="Recherche"></p>
+				</select>
+				<input type="submit" name="valid" value="Recherche">
 			</form>
 		</aside>
 
