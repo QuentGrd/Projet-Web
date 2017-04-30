@@ -21,7 +21,7 @@ header{
 	left: 0px;
 	background: #9CC4E4;
 	min-width: 510px;
-	transition: all 0.3s linear;
+	/*transition: all 0.3s linear;*/
 }
 
 header h1{
@@ -29,7 +29,7 @@ header h1{
 	color: #1B325F;
 	font-size: 40px;
 	text-align: center;
-	transition: all 0.3s linear;
+	/*transition: all 0.3s linear;*/
 }
 
 header nav{
@@ -108,13 +108,13 @@ header.scrolled nav li a{
 	text-decoration: none;
 	padding: 21.5px 25px;
 	margin: 0px;
-	transition: all 0.3s linear;
+	/*transition: all 0.3s linear;*/
 }
 
 header.scrolled nav li a:hover{
 	background: #E9F2F9;
 	color: #3A89C9;
-	transition: all 0.3s linear;
+	/*transition: all 0.3s linear;*/
 }
 
 header.scrolled h2{

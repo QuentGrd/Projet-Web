@@ -46,6 +46,10 @@ function detail_etablissement($uai, $tel, $sel = 0){
                 echo $data[3];
                 $flag = true;
             }
+            if ($sel == 2){
+                echo $data[21].', '.$data[20];
+                $flag = true;
+            }
             else if($sel == 0){
                 echo "<p>Établissement: ".$data[3]."</p>\n";
                 echo "<p>Type: ".$data[2]."</p>";
@@ -60,6 +64,7 @@ function detail_etablissement($uai, $tel, $sel = 0){
                 echo "<p>Région: ".$data[18]."</p>";
                 echo "<p>Téléphone: ".$data[14]."</p>";
                 echo "<p>Onisep: <a href=".$data[25].">".$data[25]."</a></p>";
+                echo '<div id="carte" style="width:1000px; height:300px"></div>';
                 $flag=true;
             }
         }
@@ -142,11 +147,6 @@ function tableau_etablissement($region, $acad, $ville, $type){
                     echo '<td><a href="etablissement.php?uai='.$data[0].'&tel='.$data[14].'">'.$data[3].'</a></t>';
                     echo "</tr>\n";
                 }
-                /*else{
-                    echo "<tr>";
-                    echo "<td>".$param."/".$i."</td>";
-                    echo "</tr>\n";
-                }*/
             }
             fclose($handle);
         }

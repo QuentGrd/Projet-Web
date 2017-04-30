@@ -8,7 +8,7 @@
 		<?php include('include/script.inc.php'); ?>
 	</head>
 
-	<body>
+	<body <?php if (isset($_GET['uai']) && isset($_GET['tel'])){echo 'onload="insertMap(', detail_etablissement($_GET['uai'], $_GET['tel'], 2), ')"';} ?> >
 	<?php include('include/header.inc.php'); ?>
 		<section>
 			<h2><?php detail_etablissement($_GET['uai'], $_GET['tel'], 1)?></h2>
