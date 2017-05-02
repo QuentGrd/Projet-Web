@@ -3,7 +3,7 @@
 	<head>
 		<title>Projet Web - Home</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/new_style2.css">
 		<style type="text/css">
 			section{margin:auto;}
 		</style>

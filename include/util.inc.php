@@ -154,4 +154,27 @@ function tableau_etablissement($region, $acad, $ville, $type){
     unset($i);
 }
 
+function createData($ind){
+
+    $listeNom = array();
+
+    if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
+        while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
+            if(in_array($data[$ind], $listeNom) == false){
+                $listeNom[$data[$ind]] = 0;
+            }
+            else{
+                $listeNom[$data[$ind]] ++;
+            }
+        }
+        fclose($handle);
+    }
+
+    foreach ($listeNom as &$value) {
+        echo "<p>".key($listeNom)."->".$value."</p>\n";
+    }
+
+
+} 
+
 ?>
