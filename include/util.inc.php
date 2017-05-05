@@ -1,4 +1,6 @@
-<?php function search($value, $sel){
+<?php 
+
+function search($value, $sel){
     $file=fopen("res/etablissements_denseignement_superieur.csv", "r");
     $flag=false;
     $i=decrypt_sel($sel);
@@ -154,27 +156,44 @@ function tableau_etablissement($region, $acad, $ville, $type){
     unset($i);
 }
 
-function createData($ind){
-
-    $listeNom = array();
-
-    if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
-        while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
-            if(in_array($data[$ind], $listeNom) == false){
-                $listeNom[$data[$ind]] = 0;
-            }
-            else{
-                $listeNom[$data[$ind]] ++;
-            }
-        }
-        fclose($handle);
-    }
-
-    foreach ($listeNom as &$value) {
-        echo "<p>".key($listeNom)."->".$value."</p>\n";
-    }
+function createData(){
 
 
+
+    $datay=array(62,105,85,50);
+
+
+    // Create the graph. These two calls are always required
+    $graph = new Graph(350,220,'auto');
+    $graph->SetScale("textlin");
+
+    //$theme_class="DefaultTheme";
+    //$graph->SetTheme(new $theme_class());
+
+    // set major and minor tick positions manually
+    $graph->yaxis->SetTickPositions(array(0,30,60,90,120,150), array(15,45,75,105,135));
+    $graph->SetBox(false);
+
+    //$graph->ygrid->SetColor('gray');
+    $graph->ygrid->SetFill(false);
+    $graph->xaxis->SetTickLabels(array('A','B','C','D'));
+    $graph->yaxis->HideLine(false);
+    $graph->yaxis->HideTicks(false,false);
+
+    // Create the bar plots
+    $b1plot = new BarPlot($datay);
+
+    // ...and add it to the graPH
+    $graph->Add($b1plot);
+
+
+    $b1plot->SetColor("white");
+    $b1plot->SetFillGradient("#4B0082","white",GRAD_LEFT_REFLECTION);
+    $b1plot->SetWidth(45);
+    $graph->title->Set("Bar Gradient(Left reflection)");
+
+    // Display the graph
+    $graph->Stroke();
 } 
 
 ?>

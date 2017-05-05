@@ -1,3 +1,4 @@
+<?php include("./include/util.inc.php") ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,17 +11,7 @@
 	</head>
 
 	<body>
-		<header>
-			<h1>Projet Web</h1>
-			<nav>
-				<ul>
-					<li><a href="#">Accueil</a></li>
-					<li><a href="recherche.php">Recherche</a></li>
-					<li><a href="trie.php">Trie</a></li>
-					<li><a href="#">A Propos</a></li>
-				</ul>
-			</nav>
-		</header>
+		<?php include("./include/header.inc.php"); ?>
 
 		<section style="">
 			<h2>Présentation du projet</h2>
@@ -36,8 +27,6 @@
 			</figure>
 		</section>
 
-		<footer>
-			<p>Projet réalisé par Matthieu Vilain & Quentin Gerard</p>
-		</footer>
+		<?php include('include/footer.inc.php'); ?>
 	</body>
 </html>
