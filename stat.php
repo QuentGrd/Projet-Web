@@ -1,8 +1,6 @@
-<?php 
-	include("./include/util.inc.php");
-	include('./lib/jpgraph/src/jpgraph.php');
-    include('./lib/jpgraph/src/jpgraph_bar.php');
- ?>
+<?php include("include/util.inc.php"); 
+include('./lib/jpgraph/src/jpgraph.php');
+include('./lib/jpgraph/src/jpgraph_bar.php');?>
 
 <!DOCTYPE html>
 <html>
@@ -10,12 +8,11 @@
 		<title>Projet Web - Tri</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/new_style2.css">
+		<?php include('include/script.inc.php'); ?>
 	</head>
 
 	<body>
-		<?php include("./include/header.inc.php"); ?>
-
-
+		<?php include("include/header.inc.php"); ?>
 		<section>
 			<h2>Statistique</h2>
 			<article>
@@ -55,9 +52,13 @@
 					    $graph->title->Set("Bar Gradient(Left reflection)");
 
 					    // Display the graph
-					    $graph->Stroke();
+					    //$graph->Stroke();
+					    $gdImgHandler = $graph->Stroke(_IMG_HANDLER);
+					    $fileName = "graph.png";
+					    $graph->img->Stream($fileName);
 					?>
-				</p>	
+					<img src="graph.png">
+				</p>
 			</article>
 		</section>
 		<?php include('include/footer.inc.php'); ?>

@@ -158,8 +158,6 @@ function tableau_etablissement($region, $acad, $ville, $type){
 
 function createData(){
 
-
-
     $datay=array(62,105,85,50);
 
 
