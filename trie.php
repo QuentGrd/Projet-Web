@@ -5,6 +5,7 @@
 		<title>Projet Web - Tri</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/new_style2.css">
+		<?php include('include/script.inc.php'); ?>
 	</head>
 
 	<body>
