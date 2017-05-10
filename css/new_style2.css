@@ -169,7 +169,7 @@ section{
 
 h2{
 	font-family: Avenir;
-	font-size: 25px;
+	font-size: 35px;
 	color: #F26C4F;
 }
 
@@ -183,4 +183,17 @@ footer{
 	margin: 50px 0px 0px 0px;
 	background-color: #9CC4E4;
 	text-align: center;
+}
+
+
+/*********************************
+********** Table part **********
+**********************************/
+
+th{
+	font-family: Avenir, 'h1_font', Trebuchet MS, Arial, Serif;
+	font-size: 25px;
+	background-color: #3A89C9;
+	color:white;
+	border: none;
 }
