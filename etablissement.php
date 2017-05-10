@@ -4,7 +4,7 @@ if (isset($_GET['uai']) && isset($_GET['tel'])){
 		$historique = unserialize($_COOKIE['historique']);
 		$str = $_GET['uai'].";".$_GET['tel'];
 		if (count($historique) == 5)
-			array_shift($historique);
+			array_pop($historique);
 		array_unshift($historique, $str);
 		setcookie('historique', serialize($historique), time()+60*60*24*30, null, null, false, true);
 	}
