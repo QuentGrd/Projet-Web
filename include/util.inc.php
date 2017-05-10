@@ -273,33 +273,25 @@ function createGraph($ind){
 	}
 
     else{
-        $width = max($nombre)*(3/2);
+         $width = max($nombre)*(3/2);
         $height = count($nombre)*30;
-
-
         // Create the graph. These two calls are always required
         $graph = new Graph($width,$height,'auto');
         $graph->SetScale("textlin");
         $graph->Set90AndMargin(50,20,50,30);
-
          // set major and minor tick positions manually
         $graph->yaxis->SetTickPositions($majorTick, $minorTick);
         $graph->SetBox(false);
-
         //$graph->ygrid->SetColor('gray');
         $graph->ygrid->SetFill(false);
         $graph->xaxis->SetTickLabels($listeNom);
         $graph->xaxis->SetLabelAngle(50);
         $graph->yaxis->HideLine(false);
         $graph->yaxis->HideTicks(false,false);
-
         // Create the bar plots
         $b1plot = new BarPlot($nombre);
-
         // ...and add it to the graPH
         $graph->Add($b1plot);
-
-
         $b1plot->SetColor("white");
         //$b1plot->SetFillGradient("#4B0082","white",GRAD_LEFT_REFLECTION);
         $b1plot->SetWidth(18);
