@@ -222,10 +222,6 @@ function createGraph($ind){
 		fclose($handle);
 	}
 
-	for ($i=0; $i < count($listeNom)-1; $i++) { 
-		//echo("<p>".$listeNom[$i]."->".$nombre[$i]."</p>");
-	}
-
 	$majorTick = array();
 	$minorTick = array();
 	for ($i = 0; $i<max($nombre); $i = $i+50){
@@ -234,10 +230,6 @@ function createGraph($ind){
 			array_push($minorTick, $i + 25);
 		}
 	}
-
-
-	echo count($nombre), "\n";
-	echo max($nombre);
 
     $width = 1000;
 	if ($ind == 17){
@@ -261,10 +253,20 @@ function createGraph($ind){
         $graph->xaxis->SetLabelAngle(50);
 	}
     else if ($ind == 5){
+        $total = array_sum($nombre);
+        foreach ($nombre as $i => $value){
+            $nombre[$i] = ($value*100)/$total;
+        }
+
+        unset($value);
+
+        $majorTick = array(0,20,40,60,80,100);
+        $minorTick = array(10,30,50,70,90);
+
         $height = count($nombre)*30;
 
         // Create the graph. These two calls are always required
-        $graph = new Graph($width,$height,'auto');
+        $graph = new Graph($width,$height);
         $graph->SetScale("textlin");
 
         $graph->Set90AndMargin(120,10,50,30);
@@ -308,8 +310,6 @@ function createGraph($ind){
     $graph->yaxis->HideTicks(false,false);
 
 	// Display the graph
-	//$graph->Stroke();
-	//$graph->Stroke();
 	$gdImgHandler = $graph->Stroke(_IMG_HANDLER);
 	$fileName = "graph.png";
 	$graph->img->Stream($fileName);
