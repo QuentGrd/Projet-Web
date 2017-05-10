@@ -140,13 +140,13 @@ function option_liste($ind){
 			echo '<option value="Tous les types">Tous les types</option>\n';
 			break;
 		case 11:
-			echo '<option value="Toutes les villes">Tous les villes</option>\n';
+			echo '<option value="Toutes les villes">Toutes les villes</option>\n';
 			break;
 		case 17:
-			echo '<option value="Toutes les académies">Tous les académies</option>\n';
+			echo '<option value="Toutes les académies">Toutes les académies</option>\n';
 			break;
 		case 18:
-			echo '<option value="Toutes les régions">Tous les régions</option>\n';
+			echo '<option value="Toutes les régions">Toutes les régions</option>\n';
 			break;
 		default:
 			break;
@@ -160,16 +160,20 @@ function option_liste($ind){
 }
 
 function tableau_etablissement($region, $acad, $ville, $type){
-    $ind = array(
-        2 => $type,
-        11 => $ville,
-        17 => $acad,
-        18 => $region
-    );
-    foreach ($ind as $i => $param) {
+    // $ind = array(
+    //     2 => $type,
+    //     11 => $ville,
+    //     17 => $acad,
+    //     18 => $region
+    // );
+    //foreach ($ind as $i => $param) {
+        $ville_t = "Toutes les villes";
+        $region_t = "Toutes les régions";
+        $acad_t = "Toutes les académies";
+        $type_t = "Tous les types";
         if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
             while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
-                if(strcmp($param,$data[$i])==0){
+                if(((strcmp($type,$data[2])==0) || (strcmp($type,$type_t)==0)) && ((strcmp($ville,$data[11])==0) || (strcmp($ville,$ville_t)==0)) && ((strcmp($acad,$data[17])==0) || (strcmp($acad,$acad_t)==0)) && ((strcmp($region,$data[18])==0) || (strcmp($region,$region_t)==0))){
                     echo "<tr>";
                     echo "<td>".$data[18]."</td>";
                     echo "<td>".$data[17]."</td>";
@@ -181,8 +185,8 @@ function tableau_etablissement($region, $acad, $ville, $type){
             }
             fclose($handle);
         }
-    }
-    unset($i);
+    //}
+    //unset($i);
 }
 
 function createData_s($ind){
