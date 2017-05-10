@@ -6,7 +6,7 @@
 			<li><a href="recherche.php">Recherche</a></li>
 			<li><a href="trie.php">Tri</a></li>
 			<li><a href="stat.php">Statistique</a></li>
-			<li><a href="#">A Propos</a></li>
+			<li><a href="historique.php">Historiqe</a></li>
 		</ul>
 	</nav>
 </header>
