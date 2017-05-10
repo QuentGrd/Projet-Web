@@ -52,29 +52,29 @@ function detail_etablissement($uai, $tel, $sel = 0){
             }
             else if($sel == 0){
                 echo "<table>";
-                echo '<div class="partie"><tr><th colspan="2">Détails</th></tr></div>';
+                echo '<tr><th class="partie" colspan="2">Détails</th></tr>'."\n";
                 echo "<tr><th>Établissement</th><td>".$data[3]."</td></tr>\n";
-                echo "<tr><th>Type</th><td>".$data[2]."</td></tr>";
+                echo "<tr><th>Type</th><td>".$data[2]."</td></tr>\n";
                 if ($data[1] != "")
-                    echo "<tr><th>SIRET</th><td>".$data[1]."</td></tr>";
+                    echo "<tr><th>SIRET</th><td>".$data[1]."</td></tr>\n";
                 if ($data[4] != "")
-                    echo "<tr><th>Sigle</th><td>".$data[4]."</td></tr>";
-                echo "<tr><th>Statut</th><td>".$data[5]."</td></tr>";
+                    echo "<tr><th>Sigle</th><td>".$data[4]."</td></tr>\n";
+                echo "<tr><th>Statut</th><td>".$data[5]."</td></tr>\n";
                 if ($data[6] != "")
-                    echo "<tr><th>Tutelle</th><td>".$data[6]."</td></tr>";
-                echo '<div class="partie"><tr><th colspan="2">Contact</th></tr></div>';
+                    echo "<tr><th>Tutelle</th><td>".$data[6]."</td></tr>\n";
+                echo '<tr><th class="partie" colspan="2">Contact</th></tr>'."\n";
                 echo "<tr><th>Adresse</th><td>".$data[9].", ".$data[10]." ".$data[11]."</td></tr>\n";
-                echo "<tr><th>Région</th><td>".$data[18]."</td></tr>";
-                echo "<tr><th>Téléphone</th><td>".$data[14]."</td></tr>";
-                echo "<tr><th>Onisep</th><td><a href=".$data[25].">".$data[25]."</a></td></tr>";
+                echo "<tr><th>Région</th><td>".$data[18]."</td></tr>\n";
+                echo "<tr><th>Téléphone</th><td>".$data[14]."</td></tr>\n";
+                echo "<tr><th>Onisep</th><td><a href=".$data[25].">".$data[25]."</a></td></tr>\n";
                 if(!empty($data[22]) && !empty($data[23])){
-                    echo '<div class="partie"><tr><th colspan="2">Infos pratiques</th></tr></div>';
+                    echo '<tr><th class="partie" colspan="2">Infos pratiques</th></tr>'."\n";
                     echo "<tr><th>Porte ourverte </th>"."<td>du ".$data[22]." au ".$data[23];
                     if(!empty($data[24])){
-                        echo "<br>Infos pratiques : ".$data[24]."</td></tr>";
+                        echo "<br>Infos pratiques : ".$data[24]."</td></tr>\n";
                     }
                     else{
-                        echo "</td></tr>";
+                        echo "</td></tr>\n";
                     }
                 }
                 echo "</table>";
