@@ -1,4 +1,22 @@
-<?php include("include/util.inc.php"); ?>
+<?php include("include/util.inc.php");
+if (isset($_GET['uai']) && isset($_GET['tel'])){
+	if(isset($_COOKIE['historique'])){
+		$historique = unserialize($_COOKIE['historique']);
+		$str = $_GET['uai'].";".$_GET['tel'];
+		if (count($historique) == 5)
+			array_pop($historique);
+		array_push($historique, $str);
+		setcookie('historique', serialize($historique), time()+60*60*24*30, null, null, false, true);
+	}
+	else{
+		$historique = array();
+		$str = $_GET['uai'].";".$_GET['tel'];
+		array_push($historique, $str);
+		setcookie('historique', serialize($historique), time()+60*60*24*30, null, null, false, true);
+	}
+}
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>

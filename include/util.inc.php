@@ -89,6 +89,23 @@ function detail_etablissement($uai, $tel, $sel = 0){
     fclose($file);
 }
 
+function etablissement_info($uai, $tel, $sel = 0){
+    $file=fopen("res/etablissements_denseignement_superieur.csv", "r");
+    $flag=false;
+    while(($data=fgetcsv($file, 10000,';'))!= FALSE){
+        if ((strcmp($uai,$data[0])==0) && (strcmp($tel,$data[14])==0)){
+            if ($sel == 0){
+                return $data[3];
+                $flag = true;
+            }
+        }
+    }
+    if ($flag==false){
+        return "Établissement non trouvé";
+    }
+    fclose($file);
+}
+
 function fullTableau(){
     if (($handle = fopen("res/etablissements_denseignement_superieur.csv", "r")) !== FALSE) {
         while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
@@ -249,7 +266,7 @@ function createGraph($ind){
 		$b1plot->SetColor("white");
 		//$b1plot->SetFillGradient("#4B0082","white",GRAD_LEFT_REFLECTION);
 		$b1plot->SetWidth(10);
-		$graph->title->Set("Bar Gradient(Left reflection)");
+		$graph->title->Set("Académie");
         $graph->xaxis->SetLabelAngle(50);
 	}
     else if ($ind == 5){
@@ -278,7 +295,7 @@ function createGraph($ind){
         $b1plot->SetColor("white");
         //$b1plot->SetFillGradient("#4B0082","white",GRAD_LEFT_REFLECTION);
         $b1plot->SetWidth(18);
-        $graph->title->Set("Bar Gradient(Left reflection)");
+        $graph->title->Set("Statut");
     }
     else{
         $height = count($nombre)*30;
@@ -296,7 +313,7 @@ function createGraph($ind){
         $b1plot->SetColor("white");
         //$b1plot->SetFillGradient("#4B0082","white",GRAD_LEFT_REFLECTION);
         $b1plot->SetWidth(18);
-        $graph->title->Set("Bar Gradient(Left reflection)");
+        $graph->title->Set("Type d'établissement");
     }
 
     // set major and minor tick positions manually
