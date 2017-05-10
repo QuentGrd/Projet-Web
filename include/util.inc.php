@@ -52,7 +52,7 @@ function detail_etablissement($uai, $tel, $sel = 0){
             }
             else if($sel == 0){
                 echo "<table>";
-                echo '<tr><th colspan="2">Détails</th></tr>';
+                echo '<div class="partie"><tr><th colspan="2">Détails</th></tr></div>';
                 echo "<tr><th>Établissement</th><td>".$data[3]."</td></tr>\n";
                 echo "<tr><th>Type</th><td>".$data[2]."</td></tr>";
                 if ($data[1] != "")
@@ -62,16 +62,16 @@ function detail_etablissement($uai, $tel, $sel = 0){
                 echo "<tr><th>Statut</th><td>".$data[5]."</td></tr>";
                 if ($data[6] != "")
                     echo "<tr><th>Tutelle</th><td>".$data[6]."</td></tr>";
-                echo '<tr><th colspan="2">Contact</th></tr>';
+                echo '<div class="partie"><tr><th colspan="2">Contact</th></tr></div>';
                 echo "<tr><th>Adresse</th><td>".$data[9].", ".$data[10]." ".$data[11]."</td></tr>\n";
                 echo "<tr><th>Région</th><td>".$data[18]."</td></tr>";
                 echo "<tr><th>Téléphone</th><td>".$data[14]."</td></tr>";
                 echo "<tr><th>Onisep</th><td><a href=".$data[25].">".$data[25]."</a></td></tr>";
                 if(!empty($data[22]) && !empty($data[23])){
-                    echo '<tr><th colspan="2">Infos pratiques</th></tr>';
+                    echo '<div class="partie"><tr><th colspan="2">Infos pratiques</th></tr></div>';
                     echo "<tr><th>Porte ourverte </th>"."<td>du ".$data[22]." au ".$data[23];
                     if(!empty($data[24])){
-                        echo " ---- Infos pratiques : ".$data[24]."</td></tr>";
+                        echo "<br>Infos pratiques : ".$data[24]."</td></tr>";
                     }
                     else{
                         echo "</td></tr>";
