@@ -1,4 +1,6 @@
-<?php function search($value, $sel){
+<?php 
+
+function search($value, $sel){
     $file=fopen("res/etablissements_denseignement_superieur.csv", "r");
     $flag=false;
     $i=decrypt_sel($sel);
@@ -51,19 +53,33 @@ function detail_etablissement($uai, $tel, $sel = 0){
                 $flag = true;
             }
             else if($sel == 0){
-                echo "<p>Établissement: ".$data[3]."</p>\n";
-                echo "<p>Type: ".$data[2]."</p>";
+                echo "<table>";
+                echo '<tr><th colspan="2">Détails</th></tr>';
+                echo "<tr><th>Établissement</th><td>".$data[3]."</td></tr>\n";
+                echo "<tr><th>Type</th><td>".$data[2]."</td></tr>";
                 if ($data[1] != "")
-                    echo "<p>SIRET: ".$data[1]."</p>";
+                    echo "<tr><th>SIRET</th><td>".$data[1]."</td></tr>";
                 if ($data[4] != "")
-                    echo "<p>Sigle: ".$data[4]."</p>";
-                echo "<p>Statut: ".$data[5]."</p>";
+                    echo "<tr><th>Sigle</th><td>".$data[4]."</td></tr>";
+                echo "<tr><th>Statut</th><td>".$data[5]."</td></tr>";
                 if ($data[6] != "")
-                    echo "<p>Tutelle: ".$data[6]."</p>";
-                echo "<p>Adresse: ".$data[9].", ".$data[10]." ".$data[11]."</p>\n";
-                echo "<p>Région: ".$data[18]."</p>";
-                echo "<p>Téléphone: ".$data[14]."</p>";
-                echo "<p>Onisep: <a href=".$data[25].">".$data[25]."</a></p>";
+                    echo "<tr><th>Tutelle</th><td>".$data[6]."</td></tr>";
+                echo '<tr><th colspan="2">Contact</th></tr>';
+                echo "<tr><th>Adresse</th><td>".$data[9].", ".$data[10]." ".$data[11]."</td></tr>\n";
+                echo "<tr><th>Région</th><td>".$data[18]."</td></tr>";
+                echo "<tr><th>Téléphone</th><td>".$data[14]."</td></tr>";
+                echo "<tr><th>Onisep</th><td><a href=".$data[25].">".$data[25]."</a></td></tr>";
+                if(!empty($data[22]) && !empty($data[23])){
+                    echo '<tr><th colspan="2">Infos pratiques</th></tr>';
+                    echo "<tr><th>Porte ourverte </th>"."<td>du ".$data[22]." au ".$data[23];
+                    if(!empty($data[24])){
+                        echo " ---- Infos pratiques : ".$data[24]."</td></tr>";
+                    }
+                    else{
+                        echo "</td></tr>";
+                    }
+                }
+                echo "</table>";
                 echo '<div id="carte" style="width:1000px; height:300px"></div>';
                 $flag=true;
             }
@@ -83,8 +99,8 @@ function fullTableau(){
             echo "<td>".$data[17]."</td>";
             echo "<td>".$data[11]."</td>";
             echo "<td>".$data[2]."</td>";
-            echo '<td><a href="etablissement.php?uai='.$data[0].'&tel='.$data[14].'">'.$data[3].'</a></t>';
-            echo "</tr>";
+            echo '<td><a href="etablissement.php?uai='.$data[0].'&tel='.$data[14].'">'.$data[3].'</a></td>';
+            echo "</tr>\n";
         }
         fclose($handle);
     }
@@ -144,7 +160,7 @@ function tableau_etablissement($region, $acad, $ville, $type){
                     echo "<td>".$data[17]."</td>";
                     echo "<td>".$data[11]."</td>";
                     echo "<td>".$data[2]."</td>";
-                    echo '<td><a href="etablissement.php?uai='.$data[0].'&tel='.$data[14].'">'.$data[3].'</a></t>';
+                    echo '<td><a href="etablissement.php?uai='.$data[0].'&tel='.$data[14].'">'.$data[3].'</a></td>';
                     echo "</tr>\n";
                 }
             }

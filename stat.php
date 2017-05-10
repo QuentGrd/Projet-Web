@@ -16,7 +16,6 @@
 			<h2>Statistique</h2>
 			<article>
 				<h3>Resultat</h3>
-				<p>
 					<?php
 
 						$ind = 11 ;
@@ -82,7 +81,6 @@
 					 //    $fileName = "graph.png";
 					 //    $graph->img->Stream($fileName);
 					?>
-				</p>
 			</article>
 		</section>
 		<?php include('include/footer.inc.php'); ?>

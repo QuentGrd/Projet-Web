@@ -45,7 +45,6 @@
 						if(isset($_POST['ok']))
 							tableau_etablissement($_POST['optionRegion'], $_POST['optionAcademie'], $_POST['optionVille'], $_POST['optionType']);
 						else{
-							//echo "COUCOU 3";
 							fullTableau();
 						}
 					?>
