@@ -158,7 +158,7 @@ function tableau_etablissement($region, $acad, $ville, $type){
                     echo "<td>".$data[17]."</td>";
                     echo "<td>".$data[11]."</td>";
                     echo "<td>".$data[2]."</td>";
-                    echo '<td><a href="etablissement.php?uai='.$data[0].'&tel='.$data[14].'">'.$data[3].'</a></td>';
+                    echo '<td><a href="etablissement.php?uai='.$data[0].'&amp;'.'tel='.$data[14].'">'.$data[3].'</a></td>';
                     echo "</tr>\n";
                 }
             }
@@ -239,25 +239,13 @@ function createGraph($ind){
 	echo count($nombre), "\n";
 	echo max($nombre);
 
+    $width = 1000;
 	if ($ind == 17){
-		$width = count($nombre)*21;
 		$height = max($nombre)*(3/2);
 
-
-		// Create the graph. These two calls are always required
-		$graph = new Graph($width,$height,'auto');
-		$graph->SetScale("textlin");
-
-		 // set major and minor tick positions manually
-		$graph->yaxis->SetTickPositions($majorTick, $minorTick);
-		$graph->SetBox(false);
-
-		//$graph->ygrid->SetColor('gray');
-		$graph->ygrid->SetFill(false);
-		$graph->xaxis->SetTickLabels($listeNom);
-		$graph->xaxis->SetLabelAngle(50);
-		$graph->yaxis->HideLine(false);
-		$graph->yaxis->HideTicks(false,false);
+        // Create the graph. These two calls are always required
+        $graph = new Graph($width,$height,'auto');
+        $graph->SetScale("textlin");
 
 		// Create the bar plots
 		$b1plot = new BarPlot($nombre);
@@ -270,41 +258,54 @@ function createGraph($ind){
 		//$b1plot->SetFillGradient("#4B0082","white",GRAD_LEFT_REFLECTION);
 		$b1plot->SetWidth(10);
 		$graph->title->Set("Bar Gradient(Left reflection)");
+        $graph->xaxis->SetLabelAngle(50);
 	}
-
-    else{
-        $width = max($nombre)*(3/2);
+    else if ($ind == 5){
         $height = count($nombre)*30;
-
 
         // Create the graph. These two calls are always required
         $graph = new Graph($width,$height,'auto');
         $graph->SetScale("textlin");
-        $graph->Set90AndMargin(50,20,50,30);
 
-         // set major and minor tick positions manually
-        $graph->yaxis->SetTickPositions($majorTick, $minorTick);
-        $graph->SetBox(false);
-
-        //$graph->ygrid->SetColor('gray');
-        $graph->ygrid->SetFill(false);
-        $graph->xaxis->SetTickLabels($listeNom);
-        $graph->xaxis->SetLabelAngle(50);
-        $graph->yaxis->HideLine(false);
-        $graph->yaxis->HideTicks(false,false);
+        $graph->Set90AndMargin(120,10,50,30);
 
         // Create the bar plots
         $b1plot = new BarPlot($nombre);
-
         // ...and add it to the graPH
         $graph->Add($b1plot);
-
-
         $b1plot->SetColor("white");
         //$b1plot->SetFillGradient("#4B0082","white",GRAD_LEFT_REFLECTION);
         $b1plot->SetWidth(18);
         $graph->title->Set("Bar Gradient(Left reflection)");
     }
+    else{
+        $height = count($nombre)*30;
+
+        // Create the graph. These two calls are always required
+        $graph = new Graph($width,$height,'auto');
+        $graph->SetScale("textlin");
+
+        $graph->Set90AndMargin(300,10,50,30);
+
+        // Create the bar plots
+        $b1plot = new BarPlot($nombre);
+        // ...and add it to the graPH
+        $graph->Add($b1plot);
+        $b1plot->SetColor("white");
+        //$b1plot->SetFillGradient("#4B0082","white",GRAD_LEFT_REFLECTION);
+        $b1plot->SetWidth(18);
+        $graph->title->Set("Bar Gradient(Left reflection)");
+    }
+
+    // set major and minor tick positions manually
+    $graph->yaxis->SetTickPositions($majorTick, $minorTick);
+    $graph->SetBox(false);
+
+    //$graph->ygrid->SetColor('gray');
+    $graph->ygrid->SetFill(false);
+    $graph->xaxis->SetTickLabels($listeNom);
+    $graph->yaxis->HideLine(false);
+    $graph->yaxis->HideTicks(false,false);
 
 	// Display the graph
 	//$graph->Stroke();
