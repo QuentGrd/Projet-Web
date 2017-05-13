@@ -28,7 +28,7 @@ if (isset($_GET['sel'])){
 			<article>
 				<h3>Resultat</h3>
 				<p>
-					<img src="graph.png" alt="graph" id="graph">
+					<img src="res/graph.png" alt="graph" id="graph">
 				</p>
 			</article>
 		</section>

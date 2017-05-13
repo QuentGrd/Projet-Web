@@ -1,0 +1,60 @@
+\newpage
+\section{Réalisation }
+\label{sec:impl}
+
+\subsection{L'ALU}
+\label{sec:real1}
+
+\paragraph{Composition}Notre ALU est donc composé de :
+\begin{itemize}
+\item Un multiplexeur 
+\item 8 opérations
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=15cm,height=10cm]{./img/ALU.png}
+		\caption{Schéma complet de l'ALU}
+	\label{fig:alu}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=12cm,height=8cm]{./img/fulladder.png}
+		\caption{Schéma du FullAdder}
+	\label{fig:fulladder}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=15cm,height=10cm]{./img/MUX.png}
+		\caption{Schéma du Multiplexeur}
+	\label{fig:mux}
+\end{figure}
+
+\subsection{Le banc de registre}
+\label{sec:real2}
+
+\paragraph{} Notre banc de registre est ainsi :
+\begin{itemize}
+\item 4 registres 4 bits
+\item un décodeur
+\item 2 sélecteurs de registre (un pour le BUS X et l'autre pour le BUS Y)
+\item Un sélecteur de registre pour l'ecriture (sur 2 bits)
+\item Un bit de validation pour l'écriture
+\end{itemize}
+
+\subsection{L'unité d'adressage}
+\label{sec:real3}
+
+\paragraph{} 
+
+\subsection{L'unité de contrôle}
+\label{sec:real4}
+
+\paragraph{} Notre unité de contrôle est composée d'un décodeur et d'un registre d'instruction.
+
+\subsection{Le CPU}
+\label{sec:real5}
+
+\paragraph{}Enfin pour concevoir le processeur il faut réunir les différentes parties vu ci-dessus.

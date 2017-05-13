@@ -332,7 +332,7 @@ function createGraph($ind){
 
 	// Display the graph
 	$gdImgHandler = $graph->Stroke(_IMG_HANDLER);
-	$fileName = "graph.png";
+	$fileName = "res/graph.png";
 	$graph->img->Stream($fileName);
 }
 ?>
