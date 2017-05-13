@@ -5,22 +5,14 @@
 \contentsline {paragraph}{}{2}
 \contentsline {subsection}{\numberline {2.1}Architecture physique}{2}
 \contentsline {paragraph}{}{2}
-\contentsline {subsection}{\numberline {2.2}Architecture Logique}{3}
+\contentsline {subsection}{\numberline {2.2}Architecture Logique}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {section}{\numberline {3}Choix Techniques}{3}
+\contentsline {subsection}{\numberline {3.1}Type de fichier}{3}
 \contentsline {paragraph}{}{3}
-\contentsline {section}{\numberline {3}R\'ealisation }{5}
-\contentsline {subsection}{\numberline {3.1}L'ALU}{5}
-\contentsline {paragraph}{Composition}{5}
-\contentsline {subsection}{\numberline {3.2}Le banc de registre}{6}
-\contentsline {paragraph}{}{6}
-\contentsline {subsection}{\numberline {3.3}L'unit\'e d'adressage}{6}
-\contentsline {paragraph}{}{6}
-\contentsline {subsection}{\numberline {3.4}L'unit\'e de contr\^ole}{6}
-\contentsline {paragraph}{}{6}
-\contentsline {subsection}{\numberline {3.5}Le CPU}{6}
-\contentsline {paragraph}{}{6}
-\contentsline {section}{\numberline {4}D\'eroulement du projet}{6}
-\contentsline {subsection}{\numberline {4.1}Synchronisation du travail}{6}
-\contentsline {paragraph}{}{6}
-\contentsline {subsection}{\numberline {4.2}R\'epartition du travail}{7}
-\contentsline {subsection}{\numberline {4.3}Probl\`emes rencontr\'es}{7}
-\contentsline {section}{\numberline {5}Conclusion}{7}
+\contentsline {section}{\numberline {4}D\'eroulement du projet}{3}
+\contentsline {subsection}{\numberline {4.1}Synchronisation du travail}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {subsection}{\numberline {4.2}R\'epartition du travail}{3}
+\contentsline {subsection}{\numberline {4.3}Probl\`emes rencontr\'es}{3}
+\contentsline {section}{\numberline {5}Conclusion}{3}

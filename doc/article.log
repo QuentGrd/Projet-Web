@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.16)  13 MAY 2017 21:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.16)  13 MAY 2017 21:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -312,136 +312,39 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
  (./introduction.tex [1])
 (./architecture.tex <img/archi_phys.png, id=14, 528.97626pt x 321.2pt>
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.18 ...udegraphics[width=900]{img/archi_phys.png}
-                                                  
-? h
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.18 ...udegraphics[width=900]{img/archi_phys.png}
-                                                  
-? 
 File: img/archi_phys.png Graphic file (type png)
+
 <use img/archi_phys.png>
 Package pdftex.def Info: img/archi_phys.png used on input line 18.
-(pdftex.def)             Requested size: 900.0pt x 546.5278pt.
-
-Overfull \hbox (416.30313pt too wide) in paragraph at lines 18--19
- [][] 
- []
-
-[2] <img/header.png, id=20, 1284.8pt x 163.61125pt>
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.30 		\includegraphics[width=900]{img/header.png}
-                                                  
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.30 		\includegraphics[width=900]{img/header.png}
-                                                  
-? 
+(pdftex.def)             Requested size: 362.77264pt x 220.28043pt.
+ <img/header.png, id=16, 1284.8pt x 163.61125pt>
 File: img/header.png Graphic file (type png)
+
 <use img/header.png>
 Package pdftex.def Info: img/header.png used on input line 30.
-(pdftex.def)             Requested size: 900.0pt x 114.61197pt.
-
-Overfull \hbox (416.30313pt too wide) in paragraph at lines 30--31
- [][] 
- []
-
-) (./choix.tex [3 <./img/archi_phys.png>] [4 <./img/header.png>]
-
-LaTeX Warning: File `./img/ALU.png' not found on input line 16.
-
-
-! Package pdftex.def Error: File `./img/ALU.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.16 ...ics[width=15cm,height=10cm]{./img/ALU.png}
-                                                  
-? 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 16.
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-
-LaTeX Warning: File `./img/fulladder.png' not found on input line 23.
-
-
-! Package pdftex.def Error: File `./img/fulladder.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.23 ...idth=12cm,height=8cm]{./img/fulladder.png}
-                                                  
-? 
-
-LaTeX Warning: File `./img/MUX.png' not found on input line 30.
-
-
-! Package pdftex.def Error: File `./img/MUX.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 ...ics[width=15cm,height=10cm]{./img/MUX.png}
-                                                  
-? h
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-? h
-Sorry, I already gave what help I could...
-Maybe you should try asking a human?
-An error might have occurred before I noticed any problems.
-``If all else fails, read the instructions.''
-
-? 
-[5]) (./deroulement.tex [6]) (./conclusion.tex) [7] (./article.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+(pdftex.def)             Requested size: 362.77264pt x 46.19528pt.
+) (./choix.tex [2 <./img/archi_phys.png> <./img/header.png>]) (./deroulement.te
+x) (./conclusion.tex) [3] (./article.aux) ) 
 Here is how much of TeX's memory you used:
- 3706 strings out of 493014
- 52717 string characters out of 6133351
- 124801 words of memory out of 5000000
- 7155 multiletter control sequences out of 15000+600000
- 13547 words of font info for 33 fonts, out of 8000000 for 9000
+ 3675 strings out of 493014
+ 51987 string characters out of 6133351
+ 123737 words of memory out of 5000000
+ 7132 multiletter control sequences out of 15000+600000
+ 13233 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,9n,30p,440b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss2488.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on article.pdf (8 pages, 231650 bytes).
+{/usr/local/texlive/2016/texmf-dist/
+fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/
+type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
+1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
+public/cm-super/sfss2488.pfb>
+Output written on article.pdf (4 pages, 206223 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 43 compressed objects within 1 object stream
+ 48 PDF objects out of 1000 (max. 8388607)
+ 30 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
