@@ -1,3 +1,49 @@
 \newpage
-\section{RÃ©alisation}
+\section{Réalisation}
 \label{sec:realisation}
+
+\paragraph{}Dans cette section nous présentons la réalisation du site web.
+\subsection{Pattern Général}
+\label{sec:pattern}
+\paragraph{}Le pattern général d'une page du site web est le suivant:
+\begin{itemize}
+\item Le Header insérer dans une page grâce à PHP
+\item Le contenu: varie selon la page
+\item Le footer inserer dans une page grâce à PHP
+\end{itemize}
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.75\textwidth]{img/maquette_all.png}
+		\caption{A gauche: la maquette du site normal; A droite: la maquette du site lorsque l'utilisateur a déroulé la page}
+	\label{fig:maquette}
+\end{figure}
+
+\subsection{Page Établissement}
+\label{sec:etablissement}
+\paragraph{}La page établissement est accessible seulement via un lien généré par les pages Recherche, Tri et Historique. En effet ce lien contient 2 variables acompagnées de leur valeur, envoyées par methode GET. Ces deux variables sont l'UAI de l'établissement, unique à chaque établissements, mais aussi le numéro de téléphone de la composante, car dans la base de données nous pouvons trouvez plusieurs composantes d'un même établissement, et ainsi l'UAI ne suffit plus car il est le même pour ces différentes composantes. Le numéro de Téléphone permet donc de différencier les différentes composantes d'un même établissement et ainsi d'être plus précis sur l'établissement visé par l'utilisateur.
+\paragraph{}Lorsqu'un utilisateur clique sur le lien d'un établissement, le serveur récupère les deux valeurs et génère la page avec toutes les informations de l'établissement, en faisant une recherche dans le fichier des données. Le contenu de la page établissement est composé de la manière suivante:
+\begin{itemize}
+\item Les détails de l'établissement avec:
+\begin{itemize}
+\item Le nom de l'établissement
+\item Le type d'établissement
+\item Le statut de l'établissement
+\item Le SIRET de l'établissement (si l'établissement en possède un)
+\item Le sigle de l'établissement (si l'établissement en possède un)
+\item Et la tutelle de l'établissement
+\end{itemize}
+\item Les informations pratiques (Contact):
+\begin{itemize}
+\item L'adresse de l'établissement
+\item La région de l'établissement
+\item Le numéro de téléphone de l'établissement
+\item Le lien de la fiche ONISEP de l'établissement
+\end{itemize}
+\item Enfin un carte Google Map interactive sur laquelle un marqueur est placé aux coordonnées exactes de l'établissement
+\end{itemize}
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.75\textwidth]{img/etablissement_content.png}
+		\caption{Exemple de contenu d'une page établissement (ici l'UFR S&T de Cergy-Pontoise)}
+	\label{fig:contentetablissement}
+\end{figure}
