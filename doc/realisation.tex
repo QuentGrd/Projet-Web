@@ -22,7 +22,37 @@
 \paragraph{}
 Dans ce projet nous utilisons les données publiques des établissements d'enseignement supérieur en France recensés
 par l'ONISEP (métropole et outre-mer) (liste 2 disponible en « open data » sur https://www.data.gouv.fr/).
+La récupération de ces données se fait grace à la fonction php fgetcsv.
 
+\subsection{Recherche et tri}
+\paragraph{La recherche} d'un établissement peut se faire selon différents critères :
+\begin{itemize}
+ \item l'UAI (code d'identification d'un établissement)
+ \item le nom de l'établissement
+ \item l'adresse de l'établissement
+ \item le numéro de téléphone de l'établissement
+\end{itemize}
+\paragraph{}
+On peut grace à un formulaire choisir notre critère de recherche puis entrer le champ à chercher.
+Après validation du formulaire en appuyant sur le bouton recherche, le ou les resultat(s) est(sont) affiché(s) sous forme de liste dans la partie contenu de la page.
+On peut alors cliquer sur le lien pour accéder à la établissement de la recherche.
+
+\paragraph{Le tri} (ou recherche multi-critères) permet à l'utilisateur de filter sa recherche. 
+Le tri se fait se fait également selon certains critères :
+\begin{itemize}
+ \item par région
+ \item par académie
+ \item par ville
+ \item par type (établissement privé, public ...)
+\end{itemize}
+
+\paragraph{}
+De la même manière que la recherche, le choix des critères de tri se fait par un fomulaire.
+Les champs de ses formulaire sont dynamique, si on ajoute un nouveau type d'établissement par exemple, il sera automatiquement ajouté à la liste dans le formulaire.
+Lorsque le formulaire est validé, les résultats sont également affichés sous forme de liste dans la partie contenu de la page.
+\paragraph{}
+L'utilisateur peut affiner sa recherche/son tri en remplissant plusieurs champs du formulaire. 
+Les critères de selections dans le csv seront alors cumulés.
 
 
 \subsection{Page Établissement}

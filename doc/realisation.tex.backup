@@ -18,12 +18,35 @@
 	\label{fig:maquette}
 \end{figure}
 
+\subsection{Récupération des données}
+\paragraph{}
+Dans ce projet nous utilisons les données publiques des établissements d'enseignement supérieur en France recensés
+par l'ONISEP (métropole et outre-mer) (liste 2 disponible en « open data » sur https://www.data.gouv.fr/).
+La récupération de ces données se fait grace à la fonction php fgetcsv.
+
+\subsection{Recherche et tri}
+\paragraph{La recherche} d'un établissement peut se faire selon différents critères :
+\begin{itemize}
+ \item l'UAI (code d'identification d'un établissement)
+ \item le nom de l'établissement
+ \item l'adresse de l'établissement
+ \item le numéro de téléphone de l'établissement
+\end{itemize}
+\paragraph{}
+On peut grace à un formulaire choisir notre critère de recherche puis entrer le champ à chercher.
+Après validation du formulaire en appuyant sur le bouton recherche, le ou les resultat(s) est(sont) affiché(s) sous forme de liste dans la partie contenu de la page.
+On peut alors cliquer sur le lien pour accéder à la établissement de la recherche.
+
+
+
 \subsection{Page Établissement}
 \label{sec:etablissement}
 \paragraph{}La page établissement est accessible seulement via un lien généré par les pages Recherche, Tri et Historique. 
 En effet ce lien contient 2 variables acompagnées de leur valeur, envoyées par methode GET. 
-Ces deux variables sont l'UAI de l'établissement, unique à chaque établissements, mais aussi le numéro de téléphone de la composante, car dans la base de données nous pouvons trouvez plusieurs composantes d'un même établissement, et ainsi l'UAI ne suffit plus car il est le même pour ces différentes composantes. Le numéro de Téléphone permet donc de différencier les différentes composantes d'un même établissement et ainsi d'être plus précis sur l'établissement visé par l'utilisateur.
-\paragraph{}Lorsqu'un utilisateur clique sur le lien d'un établissement, le serveur récupère les deux valeurs et génère la page avec toutes les informations de l'établissement, en faisant une recherche dans le fichier des données. Le contenu de la page établissement est composé de la manière suivante:
+Ces deux variables sont l'UAI de l'établissement, unique à chaque établissements, mais aussi le numéro de téléphone de la composante, car dans la base de données nous pouvons trouvez plusieurs composantes d'un même établissement, et ainsi l'UAI ne suffit plus car il est le même pour ces différentes composantes. 
+Le numéro de Téléphone permet donc de différencier les différentes composantes d'un même établissement et ainsi d'être plus précis sur l'établissement visé par l'utilisateur.
+\paragraph{}Lorsqu'un utilisateur clique sur le lien d'un établissement, le serveur récupère les deux valeurs et génère la page avec toutes les informations de l'établissement, en faisant une recherche dans le fichier des données. 
+Le contenu de la page établissement est composé de la manière suivante:
 \begin{itemize}
 \item Les détails de l'établissement avec:
 \begin{itemize}
