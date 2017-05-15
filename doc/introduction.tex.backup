@@ -1,0 +1,7 @@
+\newpage
+\section{Introduction}
+\label{sec:introduction}
+
+%Il n'y a pas d'espace au début du paragraphe.
+\paragraph{}Dans le cadre du module de de Developpement Web du second Semestre de L2, les étudiants doivent réalisé en binôme un projet en réutilisant les éléments appris en cours. Le projet consiste en la réalisation d'un site web permettant la mise en valeur et la recherche dans les données publiques de l'ONISEP, concernant les établissements d'enseignements supérieur en France.
+Notre binôme est composé de Matthieu VILAIN, étudiant en L2 CMI SIC, et de Quentin GERARD étudiant en L2 CMI SIC.
