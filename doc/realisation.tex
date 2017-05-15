@@ -79,6 +79,7 @@ Le contenu de la page établissement est composé de la manière suivante:
 \item La région de l'établissement
 \item Le numéro de téléphone de l'établissement
 \item Le lien de la fiche ONISEP de l'établissement
+\item Les horaires d'ouvetures (si celle ci sont renseignés)
 \end{itemize}
 \item Enfin un carte Google Map interactive sur laquelle un marqueur est placé aux coordonnées exactes de l'établissement
 \end{itemize}
@@ -106,4 +107,13 @@ L'utilisateur a accés à trois graphiques différents :
  \item le nombre d'établissements par académie
  \item la répartition (en \%) des status des établissements
 \end{itemize}
+
+\subsection{Historique}
+\paragraph{}L'utilisateur peut acceder sur la page "Historique" jusqu'aux 5 derniers établissements différents qu'il a consulté. L'historique de consultation de l'utilisateur est stocké dans un cookie pendant 30 jours, dans lequel est serializé le tableau des 5 établissements sous le format "UAI;Téléphone". Ainsi à lors de sa lecture, le cookie est déserializé, et le tableau stocké dans une variable temporaire afin de le lire et d'affiché son contenu. Lors de la consultation d'un établissement, le cookie est lu, et l'établissement en cours de consultation est ajouté au tableau si il ne l'est pas deja, apres que le dernière élement soit supprimé.
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.75\textwidth]{img/historique.png}
+		\caption{Page "Historique"}
+	\label{fig:historique}
+\end{figure}
 
