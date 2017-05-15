@@ -43,7 +43,7 @@ Le tri se fait se fait également selon certains critères :
  \item par région
  \item par académie
  \item par ville
- \item par type (établissement privé, public ...)
+ \item par type (ecole d'art, d'ingénieurs ...)
 \end{itemize}
 
 \paragraph{}
@@ -88,3 +88,22 @@ Le contenu de la page établissement est composé de la manière suivante:
 		\caption{Exemple de contenu d'une page établissement (ici l'UFR S&T de Cergy-Pontoise)}
 	\label{fig:contentetablissement}
 \end{figure}
+
+\subsection{Statistiques graphiques}
+L'utilisateur peut accéder à des statistiques sur le jeu de données sous forme de graphiques. 
+Pour cela nous avons utilisé la bibliothèque JPGraph.
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.75\textwidth]{img/stat2.png}
+		\caption{Un des résultats de la page statistique.php (ici la proportion de chaque type d'établissement)}
+	\label{fig:contentetablissement}
+\end{figure}
+
+L'utilisateur a accés à trois graphiques différents :
+\begin{itemize}
+ \item la répartition des types d'établissements
+ \item le nombre d'établissements par académie
+ \item la répartition (en \%) des status des établissements
+\end{itemize}
+

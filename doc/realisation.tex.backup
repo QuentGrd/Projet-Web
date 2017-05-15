@@ -37,6 +37,22 @@ On peut grace à un formulaire choisir notre critère de recherche puis entrer le 
 Après validation du formulaire en appuyant sur le bouton recherche, le ou les resultat(s) est(sont) affiché(s) sous forme de liste dans la partie contenu de la page.
 On peut alors cliquer sur le lien pour accéder à la établissement de la recherche.
 
+\paragraph{Le tri} (ou recherche multi-critères) permet à l'utilisateur de filter sa recherche. 
+Le tri se fait se fait également selon certains critères :
+\begin{itemize}
+ \item par région
+ \item par académie
+ \item par ville
+ \item par type (établissement privé, public ...)
+\end{itemize}
+
+\paragraph{}
+De la même manière que la recherche, le choix des critères de tri se fait par un fomulaire.
+Les champs de ses formulaire sont dynamique, si on ajoute un nouveau type d'établissement par exemple, il sera automatiquement ajouté à la liste dans le formulaire.
+Lorsque le formulaire est validé, les résultats sont également affichés sous forme de liste dans la partie contenu de la page.
+\paragraph{}
+L'utilisateur peut affiner sa recherche/son tri en remplissant plusieurs champs du formulaire. 
+Les critères de selections dans le csv seront alors cumulés.
 
 
 \subsection{Page Établissement}
@@ -72,3 +88,6 @@ Le contenu de la page établissement est composé de la manière suivante:
 		\caption{Exemple de contenu d'une page établissement (ici l'UFR S&T de Cergy-Pontoise)}
 	\label{fig:contentetablissement}
 \end{figure}
+
+\subsection{Statistiques graphiques}
+

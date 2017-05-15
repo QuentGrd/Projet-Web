@@ -33,6 +33,7 @@
 \contentsline {subsection}{\numberline {4.4}Page \'Etablissement}{7}
 \contentsline {paragraph}{}{7}
 \contentsline {paragraph}{}{7}
+\contentsline {subsection}{\numberline {4.5}Statistiques graphiques}{8}
 \contentsline {section}{\numberline {5}D\'eroulement du projet}{9}
 \contentsline {subsection}{\numberline {5.1}Synchronisation du travail}{9}
 \contentsline {paragraph}{}{9}
